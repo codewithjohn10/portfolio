@@ -340,3 +340,56 @@ box-shadow: 0 0 6px rgba(13, 110, 253, 0.3);
 display: none; /* Or reduce size */
 }
 }
+/* Ensure the image is responsive */
+.hero-section .hero-content {
+    position: relative;
+    z-index: 10; /* Ensures content is above image */
+}
+
+/* Set the image to fit its container */
+.hero-section img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover; /* Ensures the image doesn't stretch */
+}
+
+/* For smaller screens, stack the columns */
+@media (max-width: 768px) {
+    .hero-section .row {
+        flex-direction: column;
+       
+    }
+
+    .hero-section .col-lg-6 {
+        margin-bottom: 20px; /* Space between content and image */
+    }
+
+    .hero-section img {
+        margin-top: 20px; /* Add space between image and content */
+    }
+}
+
+/* Additional mobile-specific adjustments */
+
+@media (max-width: 480px) {
+    .hero-section .btn {
+        width: 100%; /* Full width for better mobile UX */
+        margin: 10px 0;
+        font-size: 14px; /* Smaller font size for phone buttons */
+        padding: 10px 16px; /* Optional: reduce padding for smaller screens */
+    }
+
+    .hero-section h1.name-title {
+        font-size: 28px;
+    }
+
+    .hero-section h2 {
+        font-size: 20px;
+    }
+
+    .hero-section h6,
+    .hero-section p.lead {
+        font-size: 14px;
+    }
+}
