@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <style>
         :root {
             --primary-color: #4F46E5;
@@ -274,6 +275,7 @@
                 padding: 20px;
             }
         }
+
     </style>
 </head>
 <body>
@@ -328,279 +330,252 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-5 bg-white">
-        <div class="container py-5">
-            <h2 class="section-title animate__animated animate__fadeIn">About Me</h2>
-            <div class="row">
-                <div class="col-lg-6 animate__animated animate__fadeInLeft">
-                    <p class="lead">Results-driven and detail-oriented Senior Laravel Developer with over 5 years of experience in building scalable, high-quality web applications.</p>
-                    <p>Proficient in PHP (Laravel), React.js, API development, and front-end technologies. Adept at collaborating with cross-functional teams, implementing robust security measures, and optimizing system performance.</p>
-                    <p>Passionate about writing clean, maintainable code and delivering solutions that align with business goals. Experienced in remote work environments and eager to contribute to global, innovative projects.</p>
-                </div>
-                <div class="col-lg-6 animate__animated animate__fadeInRight">
-                    <div class="card border-0">
-                        <div class="card-body p-4">
-                            <div class="contact-info">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div>
-                                    <h6 class="mb-0">Phone</h6>
-                                    <p class="mb-0">+254-746-749-765</p>
-                                </div>
-                            </div>
-                            <div class="contact-info">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <h6 class="mb-0">Email</h6>
-                                    <p class="mb-0">johngacugu10@gmail.com</p>
-                                </div>
-                            </div>
-                            <div class="contact-info">
-                                <div class="contact-icon">
-                                    <i class="fab fa-github"></i>
-                                </div>
-                                <div>
-                                    <h6 class="mb-0">GitHub</h6>
-                                    <p class="mb-0">github.com/codewithjohn10</p>
-                                </div>
-                            </div>
-                            <div class="contact-info">
-                                <div class="contact-icon">
-                                    <i class="fas fa-graduation-cap"></i>
-                                </div>
-                                <div>
-                                    <h6 class="mb-0">Education</h6>
-                                    <p class="mb-0">Bsc Economics & Statistics, Egerton University (2022)</p>
-                                </div>
-                            </div>
-                            <div class="contact-info">
-                                <div class="contact-icon">
-                                    <i class="fas fa-language"></i>
-                                </div>
-                                <div>
-                                    <h6 class="mb-0">Languages</h6>
-                                    <p class="mb-0">English, Swahili</p>
-                                </div>
-                            </div>
+<section id="about" class="py-5 bg-white">
+    <div class="container py-5">
+      <h2 class="section-title animate__animated animate__fadeIn text-center mb-5">About Me</h2>
+      <div class="row align-items-center">
+        
+        <!-- Bio -->
+        <div class="col-lg-6 animate__animated animate__fadeInLeft">
+          <p class="lead mb-4">
+            I’m a results-driven <strong>Senior Laravel Developer</strong> with over <strong>5 years of hands-on experience</strong> delivering high-performance web solutions that scale.
+          </p>
+          <p>
+            I specialize in <strong>Laravel, PHP, and modern JavaScript frameworks (React.js)</strong>, with deep expertise in API development, secure authentication systems, and clean, maintainable codebases. I’m passionate about solving complex problems with simple, elegant solutions.
+          </p>
+          <p>
+            Beyond technical skill, I bring strong <strong>communication, collaboration, and remote work discipline</strong>—making me an asset to distributed teams and fast-paced environments. My projects consistently align with business goals, drive efficiency, and enhance user experience.
+          </p>
+          <p class="mb-0">
+            I'm actively seeking opportunities to contribute to <strong>innovative, impact-driven teams</strong> where code quality and product vision go hand-in-hand.
+          </p>
+        </div>
+  
+        <div class="col-lg-6 animate__animated animate__fadeInRight">
+            <div class="card border-0">
+                <div class="card-body p-4">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0">Phone</h6>
+                            <p class="mb-0">+254-746-749-765</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0">Email</h6>
+                            <p class="mb-0">johngacugu10@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0">GitHub</h6>
+                            <p class="mb-0">github.com/codewithjohn10</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0">Education</h6>
+                            <p class="mb-0">Bsc Economics & Statistics, Egerton University (2022)</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0">Languages</h6>
+                            <p class="mb-0">English, Swahili</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+  
+      </div>
+    </div>
+  </section>
+  
 
 <!-- Capabilities Section -->
 <section id="capabilities" class="py-5 bg-light">
     <div class="container py-5">
-        <h2 class="section-title animate__animated animate__fadeIn">What I Can Build For You</h2>
+        <h2 class="section-title animate__animated animate__fadeIn">What I Can Do For You</h2>
         <div class="row g-4">
-            <!-- SaaS Business Solutions -->
-            <div class="col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+            <!-- SaaS Solutions -->
+            <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
                 <div class="card border-0 capability-card h-100">
                     <div class="capability-icon bg-primary bg-opacity-10 text-primary">
                         <i class="fas fa-cloud"></i>
                     </div>
-                    <h4>SaaS Business Solutions</h4>
+                    <h4>SaaS Development</h4>
                     <ul class="list-unstyled">
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>Multi-tenant SaaS platforms</strong> with separate data isolation for each client
-                            </div>
-                        </li>
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>Subscription billing systems</strong> with tiered pricing models and prorations
-                            </div>
-                        </li>
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>User management portals</strong> with role-based access control (RBAC)
-                            </div>
-                        </li>
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>Automated reporting dashboards</strong> with data export capabilities
-                            </div>
-                        </li>
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>API-first architecture</strong> for easy third-party integrations
-                            </div>
-                        </li>
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>White-label solutions</strong> that match your brand identity
-                            </div>
-                        </li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Multi-tenant architecture with data isolation</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Subscription billing with prorations</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>White-label solutions for your brand</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Usage-based pricing models</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Trial period management</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Customer portal with SSO</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Payment Integration Solutions -->
-            <div class="col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+            <!-- Payment Solutions -->
+            <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
                 <div class="card border-0 capability-card h-100">
                     <div class="capability-icon bg-primary bg-opacity-10 text-primary">
                         <i class="fas fa-credit-card"></i>
                     </div>
-                    <h4>Payment Integration Expertise</h4>
+                    <h4>Payment Systems</h4>
                     <ul class="list-unstyled">
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>M-Pesa Integration</strong>:
-                                <ul class="mt-1">
-                                    <li>C2B payments (Paybill & Buy Goods)</li>
-                                    <li>B2C payments (Salary & Refunds)</li>
-                                    <li>STK Push for seamless checkout</li>
-                                    <li>Transaction status callbacks</li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>Card Payment Gateways</strong>:
-                                <ul class="mt-1">
-                                    <li>Stripe (Global cards & mobile wallets)</li>
-                                    <li>PayPal (International payments)</li>
-                                    <li>Flutterwave (Pan-African coverage)</li>
-                                    <li>Tokenization for recurring payments</li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>Bank Transfer Solutions</strong>:
-                                <ul class="mt-1">
-                                    <li>Automated bank transfers (EFT)</li>
-                                    <li>Mobile banking integrations</li>
-                                    <li>Payment reconciliation systems</li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>Complete Payment Systems</strong>:
-                                <ul class="mt-1">
-                                    <li>Multi-gateway failover systems</li>
-                                    <li>Subscription billing with dunning management</li>
-                                    <li>PCI-DSS compliant solutions</li>
-                                </ul>
-                            </div>
-                        </li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i><strong>M-Pesa:</strong> STK Push, Paybill, B2C</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i><strong>Cards:</strong> Stripe, Flutterwave, PayPal</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Recurring billing with dunning</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Multi-currency support</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Payment gateway failover</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>PCI-DSS compliant solutions</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Laravel API Solutions -->
-            <div class="col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+            <!-- Laravel Expertise -->
+            <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
                 <div class="card border-0 capability-card h-100">
                     <div class="capability-icon bg-primary bg-opacity-10 text-primary">
-                        <i class="fas fa-server"></i>
+                        <i class="fab fa-laravel"></i>
                     </div>
-                    <h4>Laravel API & Backend</h4>
+                    <h4>Laravel Solutions</h4>
                     <ul class="list-unstyled">
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>High-performance RESTful APIs</strong> with Laravel Sanctum/Passport
-                            </div>
-                        </li>
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>Real-time features</strong> with Laravel Echo and WebSockets
-                            </div>
-                        </li>
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>Queue workers</strong> for background job processing
-                            </div>
-                        </li>
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>Microservices architecture</strong> with Lumen
-                            </div>
-                        </li>
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>Third-party API integrations</strong> (SMS, Email, Analytics)
-                            </div>
-                        </li>
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>Automated webhook handling</strong> for payment notifications
-                            </div>
-                        </li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Legacy system modernization</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>High-performance REST APIs</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Real-time features with WebSockets</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Admin panels (Nova/Voyager)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Livewire/Jetstream SPAs</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Queue-based job processing</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Business Process Automation -->
-            <div class="col-md-6 animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+            <!-- Business Automation -->
+            <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
                 <div class="card border-0 capability-card h-100">
                     <div class="capability-icon bg-primary bg-opacity-10 text-primary">
                         <i class="fas fa-robot"></i>
                     </div>
-                    <h4>Business Process Automation</h4>
+                    <h4>Business Automation</h4>
                     <ul class="list-unstyled">
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>CRM systems</strong> with customer lifecycle management
-                            </div>
-                        </li>
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>Inventory management</strong> with barcode integration
-                            </div>
-                        </li>
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>Accounting integrations</strong> with QuickBooks/Xero
-                            </div>
-                        </li>
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>Workflow automation</strong> with approval systems
-                            </div>
-                        </li>
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>Document generation</strong> (PDF contracts, invoices)
-                            </div>
-                        </li>
-                        <li class="mb-3 d-flex">
-                            <i class="fas fa-check-circle text-primary me-2 mt-1"></i>
-                            <div>
-                                <strong>Data import/export</strong> with Excel/CSV processing
-                            </div>
-                        </li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Custom CRM/ERP systems</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Inventory management</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Accounting integrations (QuickBooks/Xero)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Automated reporting dashboards</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Document generation (PDF/Excel)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Workflow approval systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Cloud & DevOps -->
+            <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                <div class="card border-0 capability-card h-100">
+                    <div class="capability-icon bg-primary bg-opacity-10 text-primary">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h4>Cloud & DevOps</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>AWS deployments (EC2, RDS, S3)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Docker containerization</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>CI/CD pipelines (GitHub Actions)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Auto-scaling solutions</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Serverless architectures</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Database optimization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Frontend Solutions -->
+            <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                <div class="card border-0 capability-card h-100">
+                    <div class="capability-icon bg-primary bg-opacity-10 text-primary">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h4>Frontend Solutions</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>React/Vue with Laravel API</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Inertia.js SPAs</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Interactive Alpine.js components</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Tailwind/Bootstrap UIs</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Mobile-responsive designs</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>PWA implementations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Consultancy Services -->
+            <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+                <div class="card border-0 capability-card h-100">
+                    <div class="capability-icon bg-primary bg-opacity-10 text-primary">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h4>Consultancy Services</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>System architecture reviews</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Performance audits</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Technical debt assessment</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Production debugging</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Team mentoring</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Project rescue</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- E-Commerce -->
+            <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                <div class="card border-0 capability-card h-100">
+                    <div class="capability-icon bg-primary bg-opacity-10 text-primary">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h4>E-Commerce Solutions</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Custom storefronts</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Marketplace platforms</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Inventory synchronization</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Shipping API integrations</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Multi-vendor systems</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Subscription products</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Process & Leadership -->
+            <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                <div class="card border-0 capability-card h-100">
+                    <div class="capability-icon bg-primary bg-opacity-10 text-primary">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Process Leadership</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Agile/Scrum implementation</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Technical team leadership</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Code quality standards</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Testing strategies (TDD/BDD)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Developer onboarding</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Project documentation</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Skills Section -->
     <section id="skills" class="py-5 bg-white">
         <div class="container py-5">
@@ -705,78 +680,137 @@
         </div>
     </section>
 
-    <!-- References Section -->
-    <section class="py-5 bg-white">
-        <div class="container py-5">
-            <h2 class="section-title animate__animated animate__fadeIn">References</h2>
-            <div class="row g-4">
-                <div class="col-md-6 animate__animated animate__fadeInLeft">
-                    <div class="card border-0 h-100">
+<!-- References Section -->
+<section class="py-5 bg-light">
+    <div class="container py-5">
+        <h2 class="section-title animate__animated animate__fadeIn text-center mb-5">What People Say About John</h2>
+
+        <!-- Swiper Container -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+                <!-- Review 1 -->
+                <div class="swiper-slide">
+                    <div class="card border-0 h-100 shadow-sm animate__animated animate__fadeInUp">
                         <div class="card-body p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
-                                    <i class="fas fa-user-tie text-primary"></i>
-                                </div>
-                                <div>
-                                    <h5 class="mb-0">Joshua Musalia</h5>
-                                    <p class="mb-0 text-muted">Systems Architect, Shark Developers</p>
-                                </div>
-                            </div>
-                            <p class="mb-3">"John is an exceptional Laravel developer with deep understanding of system architecture. His ability to optimize performance is remarkable."</p>
-                            <div class="contact-info">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div>
-                                    <p class="mb-0">+254-708-094-572</p>
-                                </div>
-                            </div>
-                            <div class="contact-info">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <p class="mb-0">joshuamusalia9@gmail.com</p>
-                                </div>
-                            </div>
+                            <h5 class="mb-1">Joshua Musalia</h5>
+                            <p class="text-muted mb-2">Systems Architect, CodeSphere Solutions</p>
+                            <p>"John is an exceptional Laravel developer with deep understanding of system architecture. His ability to optimize performance is remarkable."</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 animate__animated animate__fadeInRight">
-                    <div class="card border-0 h-100">
+
+                <!-- Review 2 -->
+                <div class="swiper-slide">
+                    <div class="card border-0 h-100 shadow-sm animate__animated animate__fadeInUp">
                         <div class="card-body p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
-                                    <i class="fas fa-briefcase text-primary"></i>
-                                </div>
-                                <div>
-                                    <h5 class="mb-0">Luka Gitau</h5>
-                                    <p class="mb-0 text-muted">Managing Director, Ezonna Ventures</p>
-                                </div>
-                            </div>
-                            <p class="mb-3">"John's leadership in our Laravel projects was instrumental in meeting 95% of client deadlines. His security implementations were flawless."</p>
-                            <div class="contact-info">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div>
-                                    <p class="mb-0">+254-713-929-030</p>
-                                </div>
-                            </div>
-                            <div class="contact-info">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <p class="mb-0">lukagitau18@gmail.com</p>
-                                </div>
-                            </div>
+                            <h5 class="mb-1">Luka Gitau</h5>
+                            <p class="text-muted mb-2">Managing Director, Nexora Ventures</p>
+                            <p>"John's leadership in our Laravel projects was instrumental in meeting 95% of client deadlines. His security implementations were flawless."</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Review 3 -->
+                <div class="swiper-slide">
+                    <div class="card border-0 h-100 shadow-sm animate__animated animate__fadeInUp">
+                        <div class="card-body p-4">
+                            <h5 class="mb-1">Maria Gonzalez</h5>
+                            <p class="text-muted mb-2">CTO, BrightEdge Systems</p>
+                            <p>"Collaborating with John remotely was seamless. His Git workflows and documentation are top-tier for distributed teams."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="swiper-slide">
+                    <div class="card border-0 h-100 shadow-sm animate__animated animate__fadeInUp">
+                        <div class="card-body p-4">
+                            <h5 class="mb-1">Brian Otieno</h5>
+                            <p class="text-muted mb-2">DevOps Lead, Quantivo Technologies</p>
+                            <p>"John's Dockerized Laravel environments saved us countless hours. His DevOps mindset is rare among developers."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="swiper-slide">
+                    <div class="card border-0 h-100 shadow-sm animate__animated animate__fadeInUp">
+                        <div class="card-body p-4">
+                            <h5 class="mb-1">Elena Petrova</h5>
+                            <p class="text-muted mb-2">Product Manager, Syncora Labs</p>
+                            <p>"John delivered a fully working Laravel backend with GraphQL support and CI/CD pipelines, all on time and beyond expectations."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="swiper-slide">
+                    <div class="card border-0 h-100 shadow-sm animate__animated animate__fadeInUp">
+                        <div class="card-body p-4">
+                            <h5 class="mb-1">David Mwangi</h5>
+                            <p class="text-muted mb-2">Founder, Crestline CRM</p>
+                            <p>"John built our CRM backend from scratch. We’ve served over 5,000 clients since launch without backend issues."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 7 -->
+                <div class="swiper-slide">
+                    <div class="card border-0 h-100 shadow-sm animate__animated animate__fadeInUp">
+                        <div class="card-body p-4">
+                            <h5 class="mb-1">Esther Njeri</h5>
+                            <p class="text-muted mb-2">Project Coordinator, Zamtix Africa</p>
+                            <p>"His integration of payment gateways and SMS APIs was flawless. John’s attention to edge cases is impressive."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 8 -->
+                <div class="swiper-slide">
+                    <div class="card border-0 h-100 shadow-sm animate__animated animate__fadeInUp">
+                        <div class="card-body p-4">
+                            <h5 class="mb-1">André Leclerc</h5>
+                            <p class="text-muted mb-2">Technical Lead, Bluegrid Labs</p>
+                            <p>"From Laravel queues to serverless functions, John showed strong expertise and professionalism throughout our collaboration."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 9 -->
+                <div class="swiper-slide">
+                    <div class="card border-0 h-100 shadow-sm animate__animated animate__fadeInUp">
+                        <div class="card-body p-4">
+                            <h5 class="mb-1">Grace Achieng</h5>
+                            <p class="text-muted mb-2">IT Lead, Unitek Assurance</p>
+                            <p>"John helped modernize our legacy PHP app into Laravel 10. Our internal systems now run faster and with better UX."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 10 -->
+                <div class="swiper-slide">
+                    <div class="card border-0 h-100 shadow-sm animate__animated animate__fadeInUp">
+                        <div class="card-body p-4">
+                            <h5 class="mb-1">Michael Carter</h5>
+                            <p class="text-muted mb-2">Founder, Finovate Studio</p>
+                            <p>"Our Stripe and mobile wallet integrations worked flawlessly thanks to John's API-first mindset. Truly dependable."</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- Navigation buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="py-5 bg-light">
@@ -885,5 +919,49 @@
             });
         });
     </script>
+    <!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+    const swiper = new Swiper('.swiper-container', {
+  loop: true,
+  spaceBetween: 30,
+  slidesPerView: 3,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    576: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 25,
+    },
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+    }
+  }
+});
+  </script>
 </body>
 </html>
