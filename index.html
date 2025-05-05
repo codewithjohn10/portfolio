@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Gacugu Kahuria - Senior Laravel Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4F46E5;
+            --secondary-color: #10B981;
+            --dark-color: #1F2937;
+            --light-color: #F9FAFB;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            scroll-behavior: smooth;
+        }
+        
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.6;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .name-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        
+        .title-spacing {
+            letter-spacing: 5px;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-badge {
+            display: inline-block;
+            background-color: #E0E7FF;
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-badge:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover .project-overlay {
+            transform: translateY(0);
+        }
+        
+        .project-card:hover .project-img {
+            transform: scale(1.1);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border: 2px solid white;
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(79, 70, 229, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0); }
+        }
+        
+        @media (max-width: 768px) {
+            .name-title {
+                font-size: 2.5rem;
+            }
+            
+            .title-spacing {
+                letter-spacing: 3px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" style="color: var(--primary-color);">John G.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content animate__animated animate__fadeInLeft">
+                    <h6 class="text-muted mb-3">HELLO, I'M</h6>
+                    <h1 class="name-title">John Gacugu Kahuria</h1>
+                    <h2 class="text-dark mb-4"><span class="title-spacing">S E N I O R</span> <span class="fw-bold" style="color: var(--primary-color);">Laravel Developer</span></h2>
+                    <p class="lead mb-4">Results-driven and detail-oriented with over 5 years of experience in building scalable, high-quality web applications.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#contact" class="btn btn-primary btn-lg px-4 pulse">Hire Me</a>
+                        <a href="#projects" class="btn btn-outline-primary btn-lg px-4">View Work</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 animate__animated animate__fadeInRight">
+                    <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Developer Illustration" class="img-fluid floating">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-white">
+        <div class="container py-5">
+            <h2 class="section-title animate__animated animate__fadeIn">About Me</h2>
+            <div class="row">
+                <div class="col-lg-6 animate__animated animate__fadeInLeft">
+                    <p class="lead">Results-driven and detail-oriented Senior Laravel Developer with over 5 years of experience in building scalable, high-quality web applications.</p>
+                    <p>Proficient in PHP (Laravel), React.js, API development, and front-end technologies. Adept at collaborating with cross-functional teams, implementing robust security measures, and optimizing system performance.</p>
+                    <p>Passionate about writing clean, maintainable code and delivering solutions that align with business goals. Experienced in remote work environments and eager to contribute to global, innovative projects.</p>
+                </div>
+                <div class="col-lg-6 animate__animated animate__fadeInRight">
+                    <div class="card border-0">
+                        <div class="card-body p-4">
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Phone</h6>
+                                    <p class="mb-0">+254-746-749-765</p>
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Email</h6>
+                                    <p class="mb-0">johngacugu10@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">GitHub</h6>
+                                    <p class="mb-0">github.com/codewithjohn10</p>
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Education</h6>
+                                    <p class="mb-0">Bsc Economics & Statistics, Egerton University (2022)</p>
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fas fa-language"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Languages</h6>
+                                    <p class="mb-0">English, Swahili</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="section-title animate__animated animate__fadeIn">Work Experience</h2>
+            <div class="row">
+                <div class="col-lg-6 animate__animated animate__fadeInLeft">
+                    <div class="card border-0 mb-4">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <h5 class="mb-0">Senior Laravel Developer</h5>
+                                <span class="badge bg-primary">Sep 2022 - Present</span>
+                            </div>
+                            <h6 class="text-muted mb-3">Ezonna Ventures</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Spearheaded the migration of legacy systems from core PHP to Laravel, improving scalability and reducing server response time by 40%.</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Designed and implemented RESTful APIs, integrating third-party services to enhance functionality.</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Led cross-functional teams in adopting Scrum methodologies, increasing project efficiency.</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Implemented robust security measures, resulting in zero data breaches or leaks.</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Mentored junior developers, fostering professional growth and improving team productivity.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 animate__animated animate__fadeInRight">
+                    <div class="card border-0 mb-4">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <h5 class="mb-0">Mid-Level Developer</h5>
+                                <span class="badge bg-primary">Aug 2021 - Sep 2022</span>
+                            </div>
+                            <h6 class="text-muted mb-3">Ezonna Ventures</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Optimized database queries and utilized queue handling to reduce server response time by 30%.</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Developed and maintained web applications using Laravel, Livewire, and front-end technologies.</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Integrated payment gateways, increasing transaction volumes by 25%.</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Conducted code reviews and implemented best practices, ensuring high code quality.</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Wrote unit and feature tests to ensure code reliability and functionality.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-white">
+        <div class="container py-5">
+            <h2 class="section-title animate__animated animate__fadeIn">Technical Skills</h2>
+            <div class="row">
+                <div class="col-md-6 animate__animated animate__fadeInLeft">
+                    <div class="card border-0 mb-4">
+                        <div class="card-body p-4">
+                            <h5 class="mb-4">Core Competencies</h5>
+                            <div>
+                                <span class="skill-badge">PHP & Laravel</span>
+                                <span class="skill-badge">API Development</span>
+                                <span class="skill-badge">Database Design</span>
+                                <span class="skill-badge">Testing & CI/CD</span>
+                                <span class="skill-badge">Version Control</span>
+                                <span class="skill-badge">Front-End Technologies</span>
+                                <span class="skill-badge">Cloud Services</span>
+                                <span class="skill-badge">Agile Methodologies</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 animate__animated animate__fadeInRight">
+                    <div class="card border-0 mb-4">
+                        <div class="card-body p-4">
+                            <h5 class="mb-4">Technical Expertise</h5>
+                            <div>
+                                <span class="skill-badge">Laravel 11+</span>
+                                <span class="skill-badge">Livewire</span>
+                                <span class="skill-badge">Jetstream</span>
+                                <span class="skill-badge">MySQL</span>
+                                <span class="skill-badge">RESTful APIs</span>
+                                <span class="skill-badge">PHPUnit/Pest</span>
+                                <span class="skill-badge">Git/GitHub</span>
+                                <span class="skill-badge">AWS (EC2, S3, RDS)</span>
+                                <span class="skill-badge">HTML/CSS/JS</span>
+                                <span class="skill-badge">Bootstrap</span>
+                                <span class="skill-badge">jQuery/AJAX</span>
+                                <span class="skill-badge">Alpine.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="section-title animate__animated animate__fadeIn">Featured Projects</h2>
+            <div class="row g-4">
+                <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+                    <div class="project-card card border-0">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 1" class="project-img">
+                        <div class="project-overlay">
+                            <h5>Legacy System Migration</h5>
+                            <p>Migrated core PHP system to Laravel with 40% performance improvement</p>
+                            <a href="#" class="btn btn-sm btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                    <div class="project-card card border-0">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80" alt="Project 2" class="project-img">
+                        <div class="project-overlay">
+                            <h5>E-commerce Platform</h5>
+                            <p>Integrated payment gateways increasing transactions by 25%</p>
+                            <a href="#" class="btn btn-sm btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                    <div class="project-card card border-0">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 3" class="project-img">
+                        <div class="project-overlay">
+                            <h5>API Integration System</h5>
+                            <p>RESTful API design with third-party service integration</p>
+                            <a href="#" class="btn btn-sm btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- References Section -->
+    <section class="py-5 bg-white">
+        <div class="container py-5">
+            <h2 class="section-title animate__animated animate__fadeIn">References</h2>
+            <div class="row g-4">
+                <div class="col-md-6 animate__animated animate__fadeInLeft">
+                    <div class="card border-0 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
+                                    <i class="fas fa-user-tie text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Joshua Musalia</h5>
+                                    <p class="mb-0 text-muted">Systems Architect, Shark Developers</p>
+                                </div>
+                            </div>
+                            <p class="mb-3">"John is an exceptional Laravel developer with deep understanding of system architecture. His ability to optimize performance is remarkable."</p>
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0">+254-708-094-572</p>
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0">joshuamusalia9@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 animate__animated animate__fadeInRight">
+                    <div class="card border-0 h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
+                                    <i class="fas fa-briefcase text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Luka Gitau</h5>
+                                    <p class="mb-0 text-muted">Managing Director, Ezonna Ventures</p>
+                                </div>
+                            </div>
+                            <p class="mb-3">"John's leadership in our Laravel projects was instrumental in meeting 95% of client deadlines. His security implementations were flawless."</p>
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0">+254-713-929-030</p>
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-0">lukagitau18@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="section-title animate__animated animate__fadeIn">Get In Touch</h2>
+            <div class="row">
+                <div class="col-lg-6 animate__animated animate__fadeInLeft">
+                    <div class="card border-0 mb-4">
+                        <div class="card-body p-4">
+                            <h5 class="mb-4">Contact Information</h5>
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Phone</h6>
+                                    <p class="mb-0">+254-746-749-765</p>
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Email</h6>
+                                    <p class="mb-0">johngacugu10@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">GitHub</h6>
+                                    <p class="mb-0">github.com/codewithjohn10</p>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <a href="https://github.com/codewithjohn10" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="mailto:johngacugu10@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                                <a href="tel:+254746749765" class="social-icon"><i class="fas fa-phone"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 animate__animated animate__fadeInRight">
+                    <div class="card border-0">
+                        <div class="card-body p-4">
+                            <h5 class="mb-4">Send Me a Message</h5>
+                            <form>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Your Name">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" placeholder="Your Email">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Subject">
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <h5 class="mb-3">John Gacugu Kahuria</h5>
+                    <p class="mb-0">Senior Laravel Developer</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">&copy; 2023 All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple animation trigger on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate__animated');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(entry.target.dataset.animate);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
