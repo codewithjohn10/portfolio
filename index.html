@@ -89,6 +89,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             margin-bottom: 20px;
             overflow: hidden;
+            height: 100%;
         }
         
         .card:hover {
@@ -136,34 +137,53 @@
             position: relative;
             overflow: hidden;
             border-radius: 10px;
-            height: 250px;
+            height: 100%;
+            transition: all 0.3s ease;
         }
         
         .project-img {
             width: 100%;
-            height: 100%;
+            height: 200px;
             object-fit: cover;
-            transition: transform 0.5s ease;
         }
         
-        .project-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        .project-body {
             padding: 20px;
+            background: white;
+        }
+        
+        .project-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .project-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .capability-card {
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .capability-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
             color: white;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
         }
         
-        .project-card:hover .project-overlay {
-            transform: translateY(0);
-        }
-        
-        .project-card:hover .project-img {
-            transform: scale(1.1);
+        .capability-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
         
         .timeline {
@@ -249,6 +269,10 @@
             .title-spacing {
                 letter-spacing: 3px;
             }
+            
+            .capability-card {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -266,7 +290,7 @@
                         <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
+                        <a class="nav-link" href="#capabilities">Capabilities</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#skills">Skills</a>
@@ -368,45 +392,63 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-5 bg-light">
+    <!-- Capabilities Section -->
+    <section id="capabilities" class="py-5 bg-light">
         <div class="container py-5">
-            <h2 class="section-title animate__animated animate__fadeIn">Work Experience</h2>
-            <div class="row">
-                <div class="col-lg-6 animate__animated animate__fadeInLeft">
-                    <div class="card border-0 mb-4">
-                        <div class="card-body p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <h5 class="mb-0">Senior Laravel Developer</h5>
-                                <span class="badge bg-primary">Sep 2022 - Present</span>
-                            </div>
-                            <h6 class="text-muted mb-3">Ezonna Ventures</h6>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Spearheaded the migration of legacy systems from core PHP to Laravel, improving scalability and reducing server response time by 40%.</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Designed and implemented RESTful APIs, integrating third-party services to enhance functionality.</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Led cross-functional teams in adopting Scrum methodologies, increasing project efficiency.</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Implemented robust security measures, resulting in zero data breaches or leaks.</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Mentored junior developers, fostering professional growth and improving team productivity.</li>
-                            </ul>
+            <h2 class="section-title animate__animated animate__fadeIn">What I Can Do For You</h2>
+            <div class="row g-4">
+                <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+                    <div class="card border-0 capability-card">
+                        <div class="capability-icon">
+                            <i class="fas fa-rocket"></i>
                         </div>
+                        <h4>System Migration</h4>
+                        <p>I can migrate your legacy systems to modern Laravel architecture, improving performance by up to 40% while maintaining all existing functionality.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 animate__animated animate__fadeInRight">
-                    <div class="card border-0 mb-4">
-                        <div class="card-body p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <h5 class="mb-0">Mid-Level Developer</h5>
-                                <span class="badge bg-primary">Aug 2021 - Sep 2022</span>
-                            </div>
-                            <h6 class="text-muted mb-3">Ezonna Ventures</h6>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Optimized database queries and utilized queue handling to reduce server response time by 30%.</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Developed and maintained web applications using Laravel, Livewire, and front-end technologies.</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Integrated payment gateways, increasing transaction volumes by 25%.</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Conducted code reviews and implemented best practices, ensuring high code quality.</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Wrote unit and feature tests to ensure code reliability and functionality.</li>
-                            </ul>
+                <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                    <div class="card border-0 capability-card">
+                        <div class="capability-icon">
+                            <i class="fas fa-code"></i>
                         </div>
+                        <h4>API Development</h4>
+                        <p>I design and implement robust RESTful APIs that integrate seamlessly with third-party services, enhancing your application's functionality.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                    <div class="card border-0 capability-card">
+                        <div class="capability-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Security Implementation</h4>
+                        <p>I implement enterprise-grade security measures to protect your applications from vulnerabilities and data breaches.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+                    <div class="card border-0 capability-card">
+                        <div class="capability-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h4>Performance Optimization</h4>
+                        <p>I optimize database queries and implement queue handling to reduce server response times by 30% or more.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                    <div class="card border-0 capability-card">
+                        <div class="capability-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h4>Payment Integration</h4>
+                        <p>I integrate secure payment gateways that can increase your transaction volumes by 25% while maintaining PCI compliance.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                    <div class="card border-0 capability-card">
+                        <div class="capability-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Team Leadership</h4>
+                        <p>I lead cross-functional teams using Scrum methodologies, helping achieve 95% of client deadlines through efficient project management.</p>
                     </div>
                 </div>
             </div>
@@ -466,34 +508,52 @@
             <h2 class="section-title animate__animated animate__fadeIn">Featured Projects</h2>
             <div class="row g-4">
                 <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
-                    <div class="project-card card border-0">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 1" class="project-img">
-                        <div class="project-overlay">
-                            <h5>Legacy System Migration</h5>
-                            <p>Migrated core PHP system to Laravel with 40% performance improvement</p>
-                            <a href="#" class="btn btn-sm btn-primary">View Details</a>
+                    <a href="#" class="project-link">
+                        <div class="project-card card border-0">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 1" class="project-img">
+                            <div class="project-body">
+                                <h5>Legacy System Migration</h5>
+                                <p class="text-muted">Successfully migrated a core PHP system to Laravel framework, resulting in 40% performance improvement and better maintainability.</p>
+                                <div class="d-flex flex-wrap">
+                                    <span class="skill-badge">Laravel</span>
+                                    <span class="skill-badge">MySQL</span>
+                                    <span class="skill-badge">Performance</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
-                    <div class="project-card card border-0">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80" alt="Project 2" class="project-img">
-                        <div class="project-overlay">
-                            <h5>E-commerce Platform</h5>
-                            <p>Integrated payment gateways increasing transactions by 25%</p>
-                            <a href="#" class="btn btn-sm btn-primary">View Details</a>
+                    <a href="#" class="project-link">
+                        <div class="project-card card border-0">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80" alt="Project 2" class="project-img">
+                            <div class="project-body">
+                                <h5>E-commerce Platform</h5>
+                                <p class="text-muted">Developed a full-featured e-commerce solution with integrated payment gateways that increased client transactions by 25%.</p>
+                                <div class="d-flex flex-wrap">
+                                    <span class="skill-badge">Laravel</span>
+                                    <span class="skill-badge">Livewire</span>
+                                    <span class="skill-badge">Payment Gateway</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-4 animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
-                    <div class="project-card card border-0">
-                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 3" class="project-img">
-                        <div class="project-overlay">
-                            <h5>API Integration System</h5>
-                            <p>RESTful API design with third-party service integration</p>
-                            <a href="#" class="btn btn-sm btn-primary">View Details</a>
+                    <a href="#" class="project-link">
+                        <div class="project-card card border-0">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 3" class="project-img">
+                            <div class="project-body">
+                                <h5>API Integration System</h5>
+                                <p class="text-muted">Designed and implemented a RESTful API system that seamlessly integrated with multiple third-party services.</p>
+                                <div class="d-flex flex-wrap">
+                                    <span class="skill-badge">API Development</span>
+                                    <span class="skill-badge">Laravel</span>
+                                    <span class="skill-badge">Security</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
