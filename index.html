@@ -345,6 +345,12 @@
   transform: scale(1.1);
   box-shadow: 0 0 6px rgba(13, 110, 253, 0.3);
 }
+@media (max-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none; /* Or reduce size */
+  }
+}
   </style>
 </head>
 <body>
@@ -410,7 +416,7 @@
             I’m a results-driven <strong>Senior Laravel Developer</strong> with over <strong>5 years of hands-on experience</strong> delivering high-performance web solutions that scale.
           </p>
           <p>
-            I specialize in <strong>Laravel, PHP, and modern JavaScript frameworks (React.js)</strong>, with deep expertise in API development, secure authentication systems, and clean, maintainable codebases. I’m passionate about solving complex problems with simple, elegant solutions.
+            I specialize in <strong>Laravel, PHP, and modern responsive Frontend Technogies</strong>, with deep expertise in API development, secure authentication systems, and clean, maintainable codebases. I’m passionate about solving complex problems with simple, elegant solutions.
           </p>
           <p>
             Beyond technical skill, I bring strong <strong>communication, collaboration, and remote work discipline</strong>—making me an asset to distributed teams and fast-paced environments. My projects consistently align with business goals, drive efficiency, and enhance user experience.
@@ -456,7 +462,7 @@
                         </div>
                         <div>
                             <h6 class="mb-0">Education</h6>
-                            <p class="mb-0">Bsc Economics & Statistics, Egerton University (2022)</p>
+                            <p class="mb-0">Bsc Economics & Statistics</p>
                         </div>
                     </div>
                     <div class="contact-info">
@@ -993,10 +999,10 @@
     const swiper = new Swiper('.swiper-container', {
       loop: true,
       spaceBetween: 30,
-      slidesPerView: 1,
+      slidesPerView: 1.5,
       breakpoints: {
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
+        768: { slidesPerView: 2.5 },
+        1024: { slidesPerView: 3.5 },
       },
       pagination: {
         el: '.swiper-pagination',
