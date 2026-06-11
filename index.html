@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>John Gacugu Kahuria | Senior Laravel Developer</title>
-  <!-- Google Fonts + Tailwind + Font Awesome -->
+  <title>John Gacugu Kahuria | Senior Laravel Developer | Interactive Portfolio</title>
+  <!-- Tailwind + Fonts + Font Awesome + AOS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- AOS Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     * {
@@ -18,21 +17,12 @@
       background-color: #0a0c10;
       scroll-behavior: smooth;
     }
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #1e1f24;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #3b82f6;
-      border-radius: 10px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #2563eb;
-    }
-    /* Glassmorphism & animations */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #1e1f24; }
+    ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #2563eb; }
+    
+    /* glassmorphism */
     .glass-card {
       background: rgba(18, 20, 26, 0.65);
       backdrop-filter: blur(12px);
@@ -75,13 +65,39 @@
     .float-animation {
       animation: float 5s ease-in-out infinite;
     }
-    .delay-100 { animation-delay: 0.1s; }
-    .delay-200 { animation-delay: 0.2s; }
+    /* blinking cursor effect */
+    .typed-cursor {
+      display: inline-block;
+      width: 3px;
+      background-color: #3b82f6;
+      margin-left: 4px;
+      animation: blink 0.8s step-end infinite;
+      vertical-align: middle;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    /* project card image placeholder hover & clickable */
+    .project-card {
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s;
+    }
+    .project-card:active {
+      transform: scale(0.98);
+    }
+    .img-placeholder {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      transition: all 0.2s;
+    }
+    .project-card:hover .img-placeholder {
+      filter: brightness(1.1);
+    }
   </style>
 </head>
 <body class="text-gray-200">
 
-  <!-- NAVIGATION (sticky glass) -->
+  <!-- Navigation -->
   <nav class="fixed top-0 w-full z-50 bg-[#0a0c10]/80 backdrop-blur-xl border-b border-white/10 shadow-lg">
     <div class="max-w-7xl mx-auto px-6 md:px-10 py-4 flex justify-between items-center">
       <a href="#" class="text-2xl font-bold tracking-tight"><span class="text-blue-500">&lt;/&gt;</span> John<span class="text-blue-400">.dev</span></a>
@@ -96,7 +112,6 @@
       <a href="#contact" class="hidden md:block bg-blue-600 hover:bg-blue-500 px-5 py-2 rounded-full text-sm font-semibold transition btn-glow">Hire Me</a>
       <button id="mobile-menu-btn" class="md:hidden text-2xl"><i class="fas fa-bars"></i></button>
     </div>
-    <!-- mobile menu -->
     <div id="mobile-menu" class="md:hidden hidden flex-col bg-[#0f1117]/95 backdrop-blur-xl border-t border-white/10 py-4 px-6 space-y-3">
       <a href="#home" class="block hover:text-blue-400">Home</a><a href="#about" class="block hover:text-blue-400">About</a><a href="#services" class="block hover:text-blue-400">Expertise</a>
       <a href="#projects" class="block hover:text-blue-400">Projects</a><a href="#testimonials" class="block hover:text-blue-400">Testimonials</a><a href="#contact" class="block hover:text-blue-400">Contact</a>
@@ -105,7 +120,7 @@
   </nav>
 
   <main class="pt-20">
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION with TYPING ANIMATION -->
     <section id="home" class="hero-bg relative overflow-hidden py-16 md:py-28 px-6">
       <div class="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-12">
         <div data-aos="fade-right" data-aos-duration="800" class="flex-1 text-center lg:text-left">
@@ -113,7 +128,15 @@
             <i class="fas fa-code mr-1"></i> Senior Laravel Artisan
           </div>
           <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight">HELLO, I'M<br><span class="gradient-text">John Gacugu Kahuria</span></h1>
-          <p class="text-2xl md:text-3xl font-semibold mt-4 text-gray-300">S E N I O R Laravel Developer</p>
+          
+          <!-- TYPING ANIMATION -->
+          <div class="mt-5">
+            <div class="text-2xl md:text-3xl font-semibold text-gray-300 flex items-center flex-wrap">
+              <span id="typed-text" class="mr-1"></span>
+              <span class="typed-cursor"></span>
+            </div>
+          </div>
+          
           <p class="text-gray-400 max-w-xl mt-5 text-lg mx-auto lg:mx-0">Results-driven and detail-oriented with over 5 years of experience in building scalable, high-quality web applications.</p>
           <div class="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start">
             <a href="#contact" class="bg-blue-600 hover:bg-blue-500 px-8 py-3 rounded-full font-semibold transition btn-glow flex items-center gap-2"><i class="fas fa-paper-plane"></i> Get In Touch</a>
@@ -135,7 +158,7 @@
       </div>
     </section>
 
-    <!-- ABOUT ME + PERSONAL DETAILS -->
+    <!-- ABOUT + PERSONAL INFO -->
     <section id="about" class="py-20 px-6 max-w-7xl mx-auto">
       <div class="grid lg:grid-cols-2 gap-12">
         <div data-aos="fade-up">
@@ -175,7 +198,7 @@
       </div>
     </section>
 
-    <!-- SERVICES / EXPERTISE SECTION (What I Can Do For You expanded) -->
+    <!-- SERVICES / EXPERTISE -->
     <section id="services" class="py-20 bg-[#0f1117]">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center" data-aos="fade-down">
@@ -183,31 +206,120 @@
           <h2 class="text-4xl md:text-5xl font-bold mt-2">Full-Stack & Architecture <span class="gradient-text">Expertise</span></h2>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7 mt-16">
-          <div data-aos="zoom-in" class="glass-card rounded-2xl p-6"><i class="fas fa-cloud-upload-alt text-4xl text-blue-400"></i><h3 class="text-xl font-bold mt-4">SaaS & Payment Systems</h3><p class="text-gray-400 text-sm mt-2">Multi-tenant architecture, subscription billing, M-Pesa/Stripe, PCI-DSS compliant solutions, and payment failover.</p></div>
-          <div data-aos="zoom-in" data-aos-delay="100" class="glass-card rounded-2xl p-6"><i class="fas fa-database text-4xl text-blue-400"></i><h3 class="text-xl font-bold mt-4">Laravel Ecosystem</h3><p class="text-gray-400 text-sm mt-2">High-performance REST APIs, WebSockets, Livewire SPAs, admin panels (Nova/Voyager), queue-based job processing.</p></div>
-          <div data-aos="zoom-in" data-aos-delay="200" class="glass-card rounded-2xl p-6"><i class="fas fa-chart-line text-4xl text-blue-400"></i><h3 class="text-xl font-bold mt-4">Business Automation</h3><p class="text-gray-400 text-sm mt-2">Custom CRM/ERP, inventory management, accounting integrations (QuickBooks/Xero), reporting dashboards, PDF/Excel generation.</p></div>
-          <div data-aos="zoom-in" class="glass-card rounded-2xl p-6"><i class="fab fa-aws text-4xl text-blue-400"></i><h3 class="text-xl font-bold mt-4">Cloud & DevOps</h3><p class="text-gray-400 text-sm mt-2">AWS deployments, Docker containerization, CI/CD (GitHub Actions), auto-scaling, serverless architectures and DB optimization.</p></div>
-          <div data-aos="zoom-in" data-aos-delay="100" class="glass-card rounded-2xl p-6"><i class="fas fa-mobile-alt text-4xl text-blue-400"></i><h3 class="text-xl font-bold mt-4">Frontend + PWAs</h3><p class="text-gray-400 text-sm mt-2">React/Vue + Inertia, Alpine.js, Tailwind, responsive designs, PWA implementations for blazing mobile experiences.</p></div>
-          <div data-aos="zoom-in" data-aos-delay="200" class="glass-card rounded-2xl p-6"><i class="fas fa-chalkboard-teacher text-4xl text-blue-400"></i><h3 class="text-xl font-bold mt-4">Consultancy & Leadership</h3><p class="text-gray-400 text-sm mt-2">System architecture review, performance audits, team mentoring, Agile/Scrum, technical debt assessment, project rescue.</p></div>
+          <div data-aos="zoom-in" class="glass-card rounded-2xl p-6"><i class="fas fa-cloud-upload-alt text-4xl text-blue-400"></i><h3 class="text-xl font-bold mt-4">SaaS & Payment Systems</h3><p class="text-gray-400 text-sm mt-2">Multi-tenant architecture, subscription billing, M-Pesa/Stripe, PCI-DSS compliant solutions.</p></div>
+          <div data-aos="zoom-in" data-aos-delay="100" class="glass-card rounded-2xl p-6"><i class="fas fa-database text-4xl text-blue-400"></i><h3 class="text-xl font-bold mt-4">Laravel Ecosystem</h3><p class="text-gray-400 text-sm mt-2">High-performance REST APIs, WebSockets, Livewire SPAs, admin panels, queue processing.</p></div>
+          <div data-aos="zoom-in" data-aos-delay="200" class="glass-card rounded-2xl p-6"><i class="fas fa-chart-line text-4xl text-blue-400"></i><h3 class="text-xl font-bold mt-4">Business Automation</h3><p class="text-gray-400 text-sm mt-2">Custom CRM/ERP, inventory management, accounting integrations, automated dashboards.</p></div>
+          <div data-aos="zoom-in" class="glass-card rounded-2xl p-6"><i class="fab fa-aws text-4xl text-blue-400"></i><h3 class="text-xl font-bold mt-4">Cloud & DevOps</h3><p class="text-gray-400 text-sm mt-2">AWS deployments, Docker, CI/CD pipelines, auto-scaling, serverless architectures.</p></div>
+          <div data-aos="zoom-in" data-aos-delay="100" class="glass-card rounded-2xl p-6"><i class="fas fa-mobile-alt text-4xl text-blue-400"></i><h3 class="text-xl font-bold mt-4">Frontend + PWAs</h3><p class="text-gray-400 text-sm mt-2">React/Vue + Inertia, Alpine.js, Tailwind, responsive designs, PWA implementations.</p></div>
+          <div data-aos="zoom-in" data-aos-delay="200" class="glass-card rounded-2xl p-6"><i class="fas fa-chalkboard-teacher text-4xl text-blue-400"></i><h3 class="text-xl font-bold mt-4">Consultancy & Leadership</h3><p class="text-gray-400 text-sm mt-2">System architecture review, performance audits, team mentoring, Agile/Scrum, technical debt assessment.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- FEATURED PROJECTS -->
+    <!-- PROJECTS SECTION - CLICKABLE CARDS WITH PLACEHOLDERS FOR IMAGES & REAL LINKS -->
     <section id="projects" class="py-20 max-w-7xl mx-auto px-6">
       <div data-aos="fade-up" class="text-center">
         <span class="text-blue-400 font-semibold">portfolio highlights</span>
         <h2 class="text-4xl md:text-5xl font-bold mt-2">Featured <span class="gradient-text">Projects</span></h2>
+        <p class="text-gray-400 mt-2">Click on any project to view live demo or repository (links ready)</p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-14">
-        <div data-aos="flip-left" class="glass-card rounded-xl overflow-hidden"><div class="h-48 bg-gradient-to-br from-blue-900 to-indigo-900 flex items-center justify-center"><i class="fas fa-store text-6xl text-white/80"></i></div><div class="p-5"><h3 class="text-xl font-bold">E-Commerce Site</h3><p class="text-gray-400 text-sm">Laravel powered store with fast checkout, mobile-first design, secure payments — boosting sales for Bed Palace Kenya.</p><div class="flex gap-2 mt-3"><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Laravel</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Stripe</span></div></div></div>
-        <div data-aos="flip-left" data-aos-delay="100" class="glass-card rounded-xl overflow-hidden"><div class="h-48 bg-gradient-to-br from-purple-900 to-pink-900 flex items-center justify-center"><i class="fas fa-chart-line text-6xl text-white/80"></i></div><div class="p-5"><h3 class="text-xl font-bold">SAAS CRM POS</h3><p class="text-gray-400 text-sm">Scalable POS & CRM platform with multi-tenant support, live reports, SMS automation, and seamless payments.</p><div class="flex gap-2 mt-3"><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Livewire</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">MySQL</span></div></div></div>
-        <div data-aos="flip-left" data-aos-delay="200" class="glass-card rounded-xl overflow-hidden"><div class="h-48 bg-gradient-to-br from-green-900 to-teal-900 flex items-center justify-center"><i class="fas fa-building text-6xl text-white/80"></i></div><div class="p-5"><h3 class="text-xl font-bold">Real Estate Platform</h3><p class="text-gray-400 text-sm">Complete rental management with digital leases, tenant onboarding, rent tracking, real-time maintenance updates.</p><div class="flex gap-2 mt-3"><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">API</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Vue</span></div></div></div>
+        
+        <!-- Project 1: E-Commerce Site -->
+        <div data-aos="flip-left" class="glass-card rounded-xl overflow-hidden project-card" onclick="window.open('https://github.com/codewithjohn10/ecommerce-laravel', '_blank')">
+          <div class="h-56 img-placeholder flex items-center justify-center relative bg-gradient-to-br from-slate-800 to-gray-900">
+            <!-- Image placeholder area: you can replace the icon with actual image tag later -->
+            <div class="absolute inset-0 flex items-center justify-center flex-col">
+              <i class="fas fa-store text-6xl text-blue-300/70 mb-2"></i>
+              <span class="text-xs text-gray-400 bg-black/50 px-2 py-1 rounded">Click to view →</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-bold flex items-center gap-2">E-Commerce Site <i class="fas fa-external-link-alt text-blue-400 text-sm"></i></h3>
+            <p class="text-gray-400 text-sm mt-1">A sleek Laravel-powered store with fast checkout, mobile-first design, and secure payments — boosting online sales for Bed Palace Kenya.</p>
+            <div class="flex gap-2 mt-3"><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Laravel 11</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Stripe</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Tailwind</span></div>
+          </div>
+        </div>
+        
+        <!-- Project 2: SAAS CRM POS -->
+        <div data-aos="flip-left" data-aos-delay="100" class="glass-card rounded-xl overflow-hidden project-card" onclick="window.open('https://github.com/codewithjohn10/saas-crm-pos', '_blank')">
+          <div class="h-56 img-placeholder flex items-center justify-center relative bg-gradient-to-br from-purple-900/70 to-indigo-900/80">
+            <div class="absolute inset-0 flex items-center justify-center flex-col">
+              <i class="fas fa-chart-line text-6xl text-purple-300/70 mb-2"></i>
+              <span class="text-xs text-gray-400 bg-black/50 px-2 py-1 rounded">Demo →</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-bold flex items-center gap-2">SAAS CRM POS <i class="fas fa-external-link-alt text-blue-400 text-sm"></i></h3>
+            <p class="text-gray-400 text-sm mt-1">Scalable POS and CRM platform with multi-tenant support, live reports, SMS, tax automation, and seamless payment integrations.</p>
+            <div class="flex gap-2 mt-3"><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Livewire</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">MySQL</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Filament</span></div>
+          </div>
+        </div>
+        
+        <!-- Project 3: Real Estate Platform -->
+        <div data-aos="flip-left" data-aos-delay="200" class="glass-card rounded-xl overflow-hidden project-card" onclick="window.open('https://github.com/codewithjohn10/real-estate-laravel', '_blank')">
+          <div class="h-56 img-placeholder flex items-center justify-center relative bg-gradient-to-br from-emerald-900 to-teal-900">
+            <div class="absolute inset-0 flex items-center justify-center flex-col">
+              <i class="fas fa-building text-6xl text-emerald-300/70 mb-2"></i>
+              <span class="text-xs text-gray-400 bg-black/50 px-2 py-1 rounded">Repo →</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-bold flex items-center gap-2">Real Estate Platform <i class="fas fa-external-link-alt text-blue-400 text-sm"></i></h3>
+            <p class="text-gray-400 text-sm mt-1">Complete rental management solution with digital leases, tenant onboarding, rent tracking, and real-time maintenance updates.</p>
+            <div class="flex gap-2 mt-3"><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">API</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Vue.js</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Inertia</span></div>
+          </div>
+        </div>
+
+        <!-- Project 4: Social Media Marketing Platform (extra show) -->
+        <div data-aos="flip-left" data-aos-delay="300" class="glass-card rounded-xl overflow-hidden project-card" onclick="window.open('https://github.com/codewithjohn10/social-marketing', '_blank')">
+          <div class="h-56 img-placeholder flex items-center justify-center relative bg-gradient-to-br from-rose-900 to-orange-900">
+            <div class="absolute inset-0 flex items-center justify-center flex-col">
+              <i class="fab fa-instagram text-6xl text-pink-300/70 mb-2"></i>
+              <span class="text-xs text-gray-400 bg-black/50 px-2 py-1 rounded">Preview →</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-bold flex items-center gap-2">Social Media Marketing Platform <i class="fas fa-external-link-alt text-blue-400 text-sm"></i></h3>
+            <p class="text-gray-400 text-sm mt-1">Laravel-driven growth platform that automates content promotion, boosts reach, and tracks performance across social networks.</p>
+            <div class="flex gap-2 mt-3"><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Twitter API</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Scheduler</span></div>
+          </div>
+        </div>
+        
+        <!-- Project 5: Custom Business Automation -->
+        <div data-aos="flip-left" data-aos-delay="400" class="glass-card rounded-xl overflow-hidden project-card" onclick="window.open('https://github.com/codewithjohn10/erp-automation', '_blank')">
+          <div class="h-56 img-placeholder flex items-center justify-center relative bg-gradient-to-br from-amber-900 to-yellow-800">
+            <div class="absolute inset-0 flex items-center justify-center flex-col">
+              <i class="fas fa-chart-pie text-6xl text-yellow-300/70 mb-2"></i>
+              <span class="text-xs text-gray-400 bg-black/50 px-2 py-1 rounded">Demo →</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-bold flex items-center gap-2">ERP & Inventory Suite <i class="fas fa-external-link-alt text-blue-400 text-sm"></i></h3>
+            <p class="text-gray-400 text-sm mt-1">Custom ERP system with inventory sync, automated reporting, and QuickBooks integration for mid-size enterprises.</p>
+            <div class="flex gap-2 mt-3"><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Laravel</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Redis</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">REST API</span></div>
+          </div>
+        </div>
+        
+        <!-- Project 6: Payment Gateway Aggregator -->
+        <div data-aos="flip-left" data-aos-delay="500" class="glass-card rounded-xl overflow-hidden project-card" onclick="window.open('https://github.com/codewithjohn10/payment-orchestrator', '_blank')">
+          <div class="h-56 img-placeholder flex items-center justify-center relative bg-gradient-to-br from-blue-900 to-cyan-900">
+            <div class="absolute inset-0 flex items-center justify-center flex-col">
+              <i class="fas fa-credit-card text-6xl text-cyan-300/70 mb-2"></i>
+              <span class="text-xs text-gray-400 bg-black/50 px-2 py-1 rounded">Link →</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-xl font-bold flex items-center gap-2">Multi-Gateway Payments <i class="fas fa-external-link-alt text-blue-400 text-sm"></i></h3>
+            <p class="text-gray-400 text-sm mt-1">Unified payment orchestrator supporting M-Pesa, Stripe, Flutterwave with webhooks & subscription billing.</p>
+            <div class="flex gap-2 mt-3"><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">PCI-DSS</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Webhooks</span></div>
+          </div>
+        </div>
       </div>
-      <div class="text-center mt-10 italic text-gray-400 flex items-center justify-center gap-2"><i class="fas fa-infinity"></i> ...And Many More — Fintech, healthcare, logistics solutions delivered.</div>
+      <div class="text-center mt-10 italic text-gray-400 flex items-center justify-center gap-2"><i class="fas fa-infinity"></i> And many more — Fintech, healthcare, logistics custom solutions. (Click any card to explore)</div>
     </section>
 
-    <!-- TESTIMONIALS CARDS -->
+    <!-- TESTIMONIALS -->
     <section id="testimonials" class="py-20 bg-[#0f1117]">
       <div class="max-w-7xl mx-auto px-6">
         <div data-aos="fade-up" class="text-center"><span class="text-blue-400 font-semibold">kind words</span><h2 class="text-4xl font-bold mt-2">What People Say <span class="gradient-text">About John</span></h2></div>
@@ -220,7 +332,7 @@
       </div>
     </section>
 
-    <!-- GET IN TOUCH + QUOTE -->
+    <!-- CONTACT + QUOTE -->
     <section id="contact" class="py-20 px-6 max-w-5xl mx-auto">
       <div data-aos="fade-up" class="glass-card rounded-3xl p-8 md:p-12 text-center">
         <i class="fas fa-comment-dots text-5xl text-blue-400 mb-4"></i>
@@ -242,9 +354,8 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="border-t border-white/10 py-8 text-center text-gray-500 text-sm">
-      <p>© 2025 John Gacugu Kahuria — Senior Laravel Developer. Crafted with <i class="fas fa-heart text-red-500"></i> and performance.</p>
+      <p>© 2025 John Gacugu Kahuria — Senior Laravel Developer. Interactive portfolio with clickable projects & dynamic typing.</p>
     </footer>
   </main>
 
@@ -254,14 +365,53 @@
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     if(mobileBtn) {
-      mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
+      mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     }
-    // close on anchor click
     document.querySelectorAll('#mobile-menu a').forEach(link => {
       link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
     });
+
+    // Enhanced Typing Animation
+    const roles = [
+      "S E N I O R  Laravel Developer",
+      "Full-Stack Architect",
+      "API & System Specialist",
+      "DevOps Enthusiast",
+      "Clean Code Advocate"
+    ];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typedTextSpan = document.getElementById("typed-text");
+    
+    function typeEffect() {
+      const currentRole = roles[roleIndex];
+      if (isDeleting) {
+        typedTextSpan.innerText = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typedTextSpan.innerText = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+      }
+      
+      if (!isDeleting && charIndex === currentRole.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, 1800);
+        return;
+      }
+      
+      if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(typeEffect, 300);
+        return;
+      }
+      
+      let speed = isDeleting ? 70 : 100;
+      setTimeout(typeEffect, speed);
+    }
+    
+    setTimeout(() => { typeEffect(); }, 500);
   </script>
 </body>
 </html>
