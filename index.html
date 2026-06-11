@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>John Gacugu Kahuria | Senior Laravel Developer | Interactive Portfolio</title>
+  <title>John Gacugu Kahuria | Senior Laravel Developer | Modern Portfolio</title>
   <!-- Tailwind + Fonts + Font Awesome + AOS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
@@ -78,20 +78,32 @@
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
     }
-    /* project card image placeholder hover & clickable */
-    .project-card {
+    /* project card styling with image handling */
+    .project-card-clickable {
       cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s;
+      transition: transform 0.25s ease, box-shadow 0.3s;
+      display: block;
+      text-decoration: none;
     }
-    .project-card:active {
-      transform: scale(0.98);
+    .project-card-clickable:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 35px -12px rgba(0,0,0,0.6);
     }
-    .img-placeholder {
-      background: linear-gradient(135deg, #1e293b, #0f172a);
-      transition: all 0.2s;
+    .project-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
     }
-    .project-card:hover .img-placeholder {
-      filter: brightness(1.1);
+    .project-card-clickable:hover .project-img {
+      transform: scale(1.02);
+    }
+    .project-body {
+      padding: 1.25rem;
+    }
+    /* fallback image style */
+    img {
+      background: #1e293b;
     }
   </style>
 </head>
@@ -216,107 +228,76 @@
       </div>
     </section>
 
-    <!-- PROJECTS SECTION - CLICKABLE CARDS WITH PLACEHOLDERS FOR IMAGES & REAL LINKS -->
+    <!-- PROJECTS SECTION - Using exact links & image paths from the repository -->
     <section id="projects" class="py-20 max-w-7xl mx-auto px-6">
       <div data-aos="fade-up" class="text-center">
         <span class="text-blue-400 font-semibold">portfolio highlights</span>
         <h2 class="text-4xl md:text-5xl font-bold mt-2">Featured <span class="gradient-text">Projects</span></h2>
-        <p class="text-gray-400 mt-2">Click on any project to view live demo or repository (links ready)</p>
+        <p class="text-gray-400 mt-2">Click any card to explore live demo — real projects in production</p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-14">
         
-        <!-- Project 1: E-Commerce Site -->
-        <div data-aos="flip-left" class="glass-card rounded-xl overflow-hidden project-card" onclick="window.open('https://github.com/codewithjohn10/ecommerce-laravel', '_blank')">
-          <div class="h-56 img-placeholder flex items-center justify-center relative bg-gradient-to-br from-slate-800 to-gray-900">
-            <!-- Image placeholder area: you can replace the icon with actual image tag later -->
-            <div class="absolute inset-0 flex items-center justify-center flex-col">
-              <i class="fas fa-store text-6xl text-blue-300/70 mb-2"></i>
-              <span class="text-xs text-gray-400 bg-black/50 px-2 py-1 rounded">Click to view →</span>
-            </div>
-          </div>
-          <div class="p-5">
-            <h3 class="text-xl font-bold flex items-center gap-2">E-Commerce Site <i class="fas fa-external-link-alt text-blue-400 text-sm"></i></h3>
-            <p class="text-gray-400 text-sm mt-1">A sleek Laravel-powered store with fast checkout, mobile-first design, and secure payments — boosting online sales for Bed Palace Kenya.</p>
-            <div class="flex gap-2 mt-3"><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Laravel 11</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Stripe</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Tailwind</span></div>
+        <!-- Project 1: E-Commerce Site (supplementary, keep as original but using consistent style) -->
+        <div data-aos="flip-left" class="glass-card rounded-xl overflow-hidden project-card-clickable" onclick="window.open('https://bedpalacekenya.com', '_blank')">
+          <img src="photos/ecommerce.png" alt="E-Commerce Site" class="project-img" onerror="this.src='https://placehold.co/600x400/1e293b/3b82f6?text=E-Commerce+Demo'">
+          <div class="project-body">
+            <h5 class="text-xl font-bold flex items-center gap-2">E-Commerce Site <i class="fas fa-external-link-alt text-blue-400 text-sm"></i></h5>
+            <p class="text-gray-400 text-sm mt-1">A sleek modern-powered store with fast checkout, mobile-first design, and secure payments — boosting online sales for Bed Palace Kenya.</p>
+            <div class="flex gap-2 mt-3"><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Laravel</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Stripe</span></div>
           </div>
         </div>
         
-        <!-- Project 2: SAAS CRM POS -->
-        <div data-aos="flip-left" data-aos-delay="100" class="glass-card rounded-xl overflow-hidden project-card" onclick="window.open('https://github.com/codewithjohn10/saas-crm-pos', '_blank')">
-          <div class="h-56 img-placeholder flex items-center justify-center relative bg-gradient-to-br from-purple-900/70 to-indigo-900/80">
-            <div class="absolute inset-0 flex items-center justify-center flex-col">
-              <i class="fas fa-chart-line text-6xl text-purple-300/70 mb-2"></i>
-              <span class="text-xs text-gray-400 bg-black/50 px-2 py-1 rounded">Demo →</span>
-            </div>
-          </div>
-          <div class="p-5">
-            <h3 class="text-xl font-bold flex items-center gap-2">SAAS CRM POS <i class="fas fa-external-link-alt text-blue-400 text-sm"></i></h3>
-            <p class="text-gray-400 text-sm mt-1">Scalable POS and CRM platform with multi-tenant support, live reports, SMS, tax automation, and seamless payment integrations.</p>
-            <div class="flex gap-2 mt-3"><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Livewire</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">MySQL</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Filament</span></div>
+        <!-- Project 2: SAAS CRM POS (exact link and image from user specification) -->
+        <div data-aos="flip-left" data-aos-delay="100" class="glass-card rounded-xl overflow-hidden project-card-clickable" onclick="window.open('https://leesifyapp.com', '_blank')">
+          <img src="photos/leesify_pos.png" alt="SAAS CRM POS" class="project-img" onerror="this.src='https://placehold.co/600x400/1e293b/3b82f6?text=Leesify+POS'">
+          <div class="project-body">
+            <h5 class="text-xl font-bold flex items-center gap-2">SAAS CRM POS <i class="fas fa-external-link-alt text-blue-400 text-sm"></i></h5>
+            <p class="text-gray-400 text-sm mt-1">A scalable POS and CRM platform with multi-tenant support, live reports, SMS, tax automation, and seamless payment integrations.</p>
+            <div class="flex gap-2 mt-3"><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Livewire</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">MySQL</span></div>
           </div>
         </div>
         
-        <!-- Project 3: Real Estate Platform -->
-        <div data-aos="flip-left" data-aos-delay="200" class="glass-card rounded-xl overflow-hidden project-card" onclick="window.open('https://github.com/codewithjohn10/real-estate-laravel', '_blank')">
-          <div class="h-56 img-placeholder flex items-center justify-center relative bg-gradient-to-br from-emerald-900 to-teal-900">
-            <div class="absolute inset-0 flex items-center justify-center flex-col">
-              <i class="fas fa-building text-6xl text-emerald-300/70 mb-2"></i>
-              <span class="text-xs text-gray-400 bg-black/50 px-2 py-1 rounded">Repo →</span>
-            </div>
+        <!-- Project 3: Real Estate Platform (ezonna.com) -->
+        <div data-aos="flip-left" data-aos-delay="200" class="glass-card rounded-xl overflow-hidden project-card-clickable" onclick="window.open('https://ezonna.com', '_blank')">
+          <img src="photos/real_estate.png" alt="Real Estate Platform" class="project-img" onerror="this.src='https://placehold.co/600x400/1e293b/3b82f6?text=Real+Estate'">
+          <div class="project-body">
+            <h5 class="text-xl font-bold flex items-center gap-2">Real Estate <i class="fas fa-external-link-alt text-blue-400 text-sm"></i></h5>
+            <p class="text-gray-400 text-sm mt-1">A complete rental management solution with digital leases, tenant onboarding, rent tracking, and real-time maintenance updates.</p>
+            <div class="flex gap-2 mt-3"><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">API</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Vue.js</span></div>
           </div>
-          <div class="p-5">
-            <h3 class="text-xl font-bold flex items-center gap-2">Real Estate Platform <i class="fas fa-external-link-alt text-blue-400 text-sm"></i></h3>
-            <p class="text-gray-400 text-sm mt-1">Complete rental management solution with digital leases, tenant onboarding, rent tracking, and real-time maintenance updates.</p>
-            <div class="flex gap-2 mt-3"><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">API</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Vue.js</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Inertia</span></div>
+        </div>
+        
+        <!-- Project 4: Social Media Marketing Platform (123follows.com) -->
+        <div data-aos="flip-left" data-aos-delay="300" class="glass-card rounded-xl overflow-hidden project-card-clickable" onclick="window.open('https://123follows.com', '_blank')">
+          <img src="photos/social_media.png" alt="Social Media Marketing Platform" class="project-img" onerror="this.src='https://placehold.co/600x400/1e293b/3b82f6?text=Social+Media+Tool'">
+          <div class="project-body">
+            <h5 class="text-xl font-bold flex items-center gap-2">Social Media Marketing Platform <i class="fas fa-external-link-alt text-blue-400 text-sm"></i></h5>
+            <p class="text-gray-400 text-sm mt-1">A Laravel-driven growth platform that automates content promotion, boosts reach, and tracks performance across social networks.</p>
+            <div class="flex gap-2 mt-3"><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Social APIs</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Scheduler</span></div>
           </div>
         </div>
 
-        <!-- Project 4: Social Media Marketing Platform (extra show) -->
-        <div data-aos="flip-left" data-aos-delay="300" class="glass-card rounded-xl overflow-hidden project-card" onclick="window.open('https://github.com/codewithjohn10/social-marketing', '_blank')">
-          <div class="h-56 img-placeholder flex items-center justify-center relative bg-gradient-to-br from-rose-900 to-orange-900">
-            <div class="absolute inset-0 flex items-center justify-center flex-col">
-              <i class="fab fa-instagram text-6xl text-pink-300/70 mb-2"></i>
-              <span class="text-xs text-gray-400 bg-black/50 px-2 py-1 rounded">Preview →</span>
-            </div>
-          </div>
-          <div class="p-5">
-            <h3 class="text-xl font-bold flex items-center gap-2">Social Media Marketing Platform <i class="fas fa-external-link-alt text-blue-400 text-sm"></i></h3>
-            <p class="text-gray-400 text-sm mt-1">Laravel-driven growth platform that automates content promotion, boosts reach, and tracks performance across social networks.</p>
-            <div class="flex gap-2 mt-3"><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Twitter API</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Scheduler</span></div>
-          </div>
-        </div>
-        
-        <!-- Project 5: Custom Business Automation -->
-        <div data-aos="flip-left" data-aos-delay="400" class="glass-card rounded-xl overflow-hidden project-card" onclick="window.open('https://github.com/codewithjohn10/erp-automation', '_blank')">
-          <div class="h-56 img-placeholder flex items-center justify-center relative bg-gradient-to-br from-amber-900 to-yellow-800">
-            <div class="absolute inset-0 flex items-center justify-center flex-col">
-              <i class="fas fa-chart-pie text-6xl text-yellow-300/70 mb-2"></i>
-              <span class="text-xs text-gray-400 bg-black/50 px-2 py-1 rounded">Demo →</span>
-            </div>
-          </div>
-          <div class="p-5">
-            <h3 class="text-xl font-bold flex items-center gap-2">ERP & Inventory Suite <i class="fas fa-external-link-alt text-blue-400 text-sm"></i></h3>
-            <p class="text-gray-400 text-sm mt-1">Custom ERP system with inventory sync, automated reporting, and QuickBooks integration for mid-size enterprises.</p>
-            <div class="flex gap-2 mt-3"><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Laravel</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Redis</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">REST API</span></div>
-          </div>
-        </div>
-        
-        <!-- Project 6: Payment Gateway Aggregator -->
-        <div data-aos="flip-left" data-aos-delay="500" class="glass-card rounded-xl overflow-hidden project-card" onclick="window.open('https://github.com/codewithjohn10/payment-orchestrator', '_blank')">
-          <div class="h-56 img-placeholder flex items-center justify-center relative bg-gradient-to-br from-blue-900 to-cyan-900">
-            <div class="absolute inset-0 flex items-center justify-center flex-col">
-              <i class="fas fa-credit-card text-6xl text-cyan-300/70 mb-2"></i>
-              <span class="text-xs text-gray-400 bg-black/50 px-2 py-1 rounded">Link →</span>
-            </div>
-          </div>
-          <div class="p-5">
-            <h3 class="text-xl font-bold flex items-center gap-2">Multi-Gateway Payments <i class="fas fa-external-link-alt text-blue-400 text-sm"></i></h3>
+        <!-- Project 5: Additional - Payment Gateway Orchestrator (to showcase more depth) -->
+        <!-- <div data-aos="flip-left" data-aos-delay="400" class="glass-card rounded-xl overflow-hidden project-card-clickable" onclick="window.open('https://github.com/codewithjohn10/payment-orchestrator', '_blank')">
+          <img src="photos/payment_gateway.png" alt="Multi-Gateway Payments" class="project-img" onerror="this.src='https://placehold.co/600x400/1e293b/3b82f6?text=Payment+Hub'">
+          <div class="project-body">
+            <h5 class="text-xl font-bold flex items-center gap-2">Multi-Gateway Payments <i class="fas fa-external-link-alt text-blue-400 text-sm"></i></h5>
             <p class="text-gray-400 text-sm mt-1">Unified payment orchestrator supporting M-Pesa, Stripe, Flutterwave with webhooks & subscription billing.</p>
             <div class="flex gap-2 mt-3"><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">PCI-DSS</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Webhooks</span></div>
           </div>
-        </div>
+        </div> -->
+
+        <!-- Project 6: Business Automation Suite -->
+        <!-- <div data-aos="flip-left" data-aos-delay="500" class="glass-card rounded-xl overflow-hidden project-card-clickable" onclick="window.open('https://github.com/codewithjohn10/erp-automation', '_blank')">
+          <img src="photos/erp_suite.png" alt="ERP & Inventory Suite" class="project-img" onerror="this.src='https://placehold.co/600x400/1e293b/3b82f6?text=ERP+Automation'">
+          <div class="project-body">
+            <h5 class="text-xl font-bold flex items-center gap-2">ERP & Inventory Suite <i class="fas fa-external-link-alt text-blue-400 text-sm"></i></h5>
+            <p class="text-gray-400 text-sm mt-1">Custom ERP system with inventory sync, automated reporting, and QuickBooks integration for mid-size enterprises.</p>
+            <div class="flex gap-2 mt-3"><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Laravel</span><span class="text-xs bg-blue-500/20 px-2 py-1 rounded">Redis</span></div>
+          </div>
+        </div> -->
       </div>
-      <div class="text-center mt-10 italic text-gray-400 flex items-center justify-center gap-2"><i class="fas fa-infinity"></i> And many more — Fintech, healthcare, logistics custom solutions. (Click any card to explore)</div>
+      <div class="text-center mt-10 italic text-gray-400 flex items-center justify-center gap-2"><i class="fas fa-infinity"></i> And many more — Fintech, healthcare, logistics custom solutions. Click any card to explore live demos or repositories.</div>
     </section>
 
     <!-- TESTIMONIALS -->
@@ -355,7 +336,7 @@
     </section>
 
     <footer class="border-t border-white/10 py-8 text-center text-gray-500 text-sm">
-      <p>© 2025 John Gacugu Kahuria — Senior Laravel Developer. Interactive portfolio with clickable projects & dynamic typing.</p>
+      <p>© 2025 John Gacugu Kahuria — Senior Laravel Developer. Interactive portfolio with dynamic typing & live project previews.</p>
     </footer>
   </main>
 
